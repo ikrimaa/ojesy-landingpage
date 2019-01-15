@@ -1,3 +1,7 @@
+:root {
+  --primary: #003D1E;
+}
+
 .App {
   text-align: center;
 }
