@@ -13,7 +13,7 @@ class HomePage extends Component {
     .then(res => {
       let menus = res.data;
       this.setState({ menus });
-      console.log(this.state.menus)
+     // console.log(this.state.menus.menu)
     })
   }
 
@@ -26,7 +26,8 @@ class HomePage extends Component {
       <div className="App">
         <header className="App-header">
         <ul>
-        {/* { this.state.menus.menu.map(menu => <li>{menu.cover}</li>)} */}
+        {/* { this.state.menus.menu.map( datas => <li>{datas}</li>)} */}
+        {this.state.menus.menu}
       </ul>
         </header>
       </div>
