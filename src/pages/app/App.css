@@ -34,3 +34,14 @@
     transform: rotate(360deg);
   }
 }
+
+.App-cards {
+  background-color: aliceblue;
+  align-items: left;
+  justify-content: center;
+  color: black;
+  height: 40vmin;
+  padding: 20vmin;
+  width: 40vmax;
+  margin: 10vmin;
+}

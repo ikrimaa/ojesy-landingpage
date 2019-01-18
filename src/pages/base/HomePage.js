@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../app/App.css';
 import axios from 'axios';
 
+
 class HomePage extends Component {
   state = {
     menus: [],
@@ -45,14 +46,17 @@ class HomePage extends Component {
         {this.state.menus.menu}
         {/* menampilkan post */}
         <div>{
-         listPost.map(datas => <div>{datas.name} - {datas.post}</div>
+         listPost.map(datas => <div className="App-cards" >{datas.name} - {datas.post}</div>
             
             )
         }
         </div>
       </ul>
         </header>
-     
+        <div class="w3-container w3-green">
+  <h1>W3Schools Demo</h1> 
+  <p>Resize this responsive page!</p> 
+</div>
         
       </div>
     );
