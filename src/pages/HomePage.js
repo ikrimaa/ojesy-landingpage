@@ -40,7 +40,7 @@ class HomePage extends Component {
    
     return (
      <div >
-       <SlideCover/>
+       <SlideCover />
      </div> 
     );
   }
