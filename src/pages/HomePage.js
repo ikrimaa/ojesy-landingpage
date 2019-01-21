@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import axios from 'axios';
-import cover from '../components/Cover'
+
+
 class HomePage extends Component {
   state = {
     menus: [],
@@ -37,7 +37,8 @@ class HomePage extends Component {
     const { listPost } = this.state
     console.log(listPost)  
     return (
-      <cover />
+      <div></div>
+      
     );
   }
 }
