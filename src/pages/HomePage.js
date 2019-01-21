@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SlideCover from '../components/SlideCover'
 
 
 class HomePage extends Component {
@@ -35,10 +36,12 @@ class HomePage extends Component {
 
   render() {
     const { listPost } = this.state
-    console.log(listPost)  
+    console.log(listPost) 
+   
     return (
-      <div></div>
-      
+     <div >
+       <SlideCover/>
+     </div> 
     );
   }
 }

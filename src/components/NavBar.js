@@ -167,18 +167,8 @@ class NavBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-         
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <Link
-                color="inherit"
-                component="button"
-                variant="body2"
-                onClick={() => {
-                  alert("I'm a button.");
-                }}
-              >
-                OJESY
-            </Link>
+              OJESY
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
