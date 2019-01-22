@@ -165,13 +165,16 @@ class NavBar extends Component {
                     <Typography className={classes.title} variant="h7" color="inherit" noWrap >Tentang Kami</Typography>
                   </Button>
                   <Button href="/" className={classes.button}>
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Fitur</Typography>
+                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Layanan</Typography>
+                  </Button>
+                  <Button href="/" className={classes.button} >
+                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Blog</Typography>
                   </Button>
                   <Button href="/" className={classes.button} >
                     <Typography className={classes.title} variant="h7" color="inherit" noWrap >Team</Typography>
                   </Button>
                   <Button href="/" className={classes.button} >
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >BLOG</Typography>
+                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Kontak</Typography>
                   </Button>
                 </div>
                 <div className={classes.sectionMobile}>

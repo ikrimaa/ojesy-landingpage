@@ -15,7 +15,7 @@ function AppRouter() {
         <Switch>
           <Route exact path="/" component={HomePage} />  
           <Route  path="/about" component={AboutUs} /> 
-          <Route  component={NotFound}/> 
+          <Route  path="*" component={NotFound}/> 
         </Switch>
       </Router>
       </div>
