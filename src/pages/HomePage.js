@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SlideCover from '../components/SlideCover'
 import FiturList from '../components/FiturList';
+import Galeri from '../components/Galeri'
 
 
 
@@ -44,6 +45,7 @@ class HomePage extends Component {
      <div >
        <SlideCover />
        <FiturList />
+       <Galeri />
      </div> 
     
     );

@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import './styles.css';
+import fitur from '../images/calendar.png'
 
 const FiturCard = (props) => {
     return(
@@ -13,7 +14,8 @@ const FiturCard = (props) => {
                         
           {/* { props.FiturCard ? ( */}
                 <Card>
-                    <CardMedia style={{height: 0, paddingTop: '56.25%'}}
+                    <CardMedia style={{height: 0, paddingTop: '56.25%', }}
+                        image={fitur}
                         // image={props.course.fields.courseImage.fields.file.url}
                         // title={props.course.fields.title}
                         />
@@ -24,7 +26,10 @@ const FiturCard = (props) => {
                     </CardContent>
                 </Card>
           {/* ): null }   */}
+          
         </div>
+        
+        
     )
 }
 export default FiturCard
