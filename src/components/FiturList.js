@@ -108,12 +108,7 @@ const styles = theme => ({
   title: {
     marginBottom: theme.spacing.unit * 14,
   },
-  number: {
-    fontSize: 24,
-    fontFamily: theme.typography.fontFamily,
-    color: theme.palette.secondary.main,
-    fontWeight: theme.typography.fontWeightMedium,
-  },
+ 
   image: {
     height: 55,
     marginTop: theme.spacing.unit * 4,

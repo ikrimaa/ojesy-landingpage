@@ -156,7 +156,7 @@ class NavBar extends Component {
       >
       {menus.map((item) =>(
         <MenuItem>
-        <Button  href={item.link} className={classes.button} >
+        <Button  href={item.link}  className={classes.button} >
         <Typography>{item.name}</Typography>
         </Button>
       </MenuItem>
