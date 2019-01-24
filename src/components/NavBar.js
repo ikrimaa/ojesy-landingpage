@@ -12,6 +12,7 @@ import Menu from '@material-ui/core/Menu';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import axios from 'axios';
 
 const styles = theme => ({
   typography :{
@@ -92,6 +93,17 @@ class NavBar extends Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
+    menus: [],
+  };
+
+  handleLoad = () => {
+      axios.post(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/landing-page`)
+        .then(res => {
+          let landingPage = res.data;
+          let menus = landingPage[0].menu;
+          this.setState({ menus });
+          console.log(menus);
+        })
   };
 
   handleProfileMenuOpen = event => {
@@ -111,8 +123,12 @@ class NavBar extends Component {
     this.setState({ mobileMoreAnchorEl: null });
   };
 
+  componentDidMount(){
+    this.handleLoad()
+  }
+
   render() {
-    const { anchorEl, mobileMoreAnchorEl } = this.state;
+    const { anchorEl, mobileMoreAnchorEl, menus } = this.state;
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -139,7 +155,7 @@ class NavBar extends Component {
         onClose={this.handleMobileMenuClose}
       >
         <MenuItem href="test">
-          <Button href="/" className={classes.button} >
+          <Button href="/about" className={classes.button} >
           <Typography >Tentang Kami</Typography>
           </Button>
         </MenuItem>
@@ -167,21 +183,11 @@ class NavBar extends Component {
                 </Button>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
-                  <Button href="/" className={classes.button}>
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Tentang Kami</Typography>
-                  </Button>
-                  <Button href="/" className={classes.button}>
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Layanan</Typography>
-                  </Button>
-                  <Button href="/" className={classes.button} >
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Blog</Typography>
-                  </Button>
-                  <Button href="/" className={classes.button} >
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Team</Typography>
-                  </Button>
-                  <Button href="/" className={classes.button} >
-                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >Kontak</Typography>
-                  </Button>
+                { menus.map((item,index)=> ( 
+                   <Button key={index} href={item.link} className={classes.button}>
+                   <Typography className={classes.title} variant="h7" color="inherit" noWrap >{item.name}</Typography>
+                 </Button>
+                ))} 
                 </div>
                 <div className={classes.sectionMobile}>
                   <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">

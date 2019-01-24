@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Galeri from '../components/Galeri'
 
 class AboutUs extends Component {
 
   render (){
       return (
-          <div>test ini halaman</div>
+        <div >
+        <Galeri />
+      </div> 
       );
   }
 }

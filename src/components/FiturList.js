@@ -88,7 +88,7 @@ import Typography from './Typography';
 const styles = theme => ({
   root: {
     display: 'flex',
-    backgroundColor: '#82b1ff',
+    // backgroundColor: '#82b1ff',
     overflow: 'hidden',
   },
   layoutBody: {

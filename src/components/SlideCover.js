@@ -2,9 +2,9 @@
 import React, {Component} from 'react';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
- import './slider-animations.css';
- import './styles.css';
- import axios from 'axios';
+import './slider-animations.css';
+import './styles.css';
+import axios from 'axios';
 class SlideCover extends Component {
     state = {
         landingPage: [],
