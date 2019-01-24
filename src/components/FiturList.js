@@ -80,8 +80,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
-// // import Button from '../components/Button';
+import './styles.css';
+import Button from './Button';
 import LayoutBody from './LayoutBody';
 import Typography from './Typography';
 
@@ -127,6 +127,9 @@ const styles = theme => ({
   },
   button: {
     backgroundColor: '#2196f3',
+    '&:hover': {
+        backgroundColor: '#5393ff',
+      },
     marginTop: theme.spacing.unit * 8,
   },
 });
@@ -186,7 +189,8 @@ function FiturList(props) {
           </Grid>
         </div>
         <Button
-          color="secondary"
+            color="secondary"
+          //color="primary"
           size="large"
           variant="contained"
           className={classes.button}

@@ -66,7 +66,7 @@ button {
 
 button:hover {
   color: #FFFFFF;
-  background: #222222;
+  background: #4dabf5;
   -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
@@ -91,11 +91,13 @@ button:hover {
   position: relative;
   height: 90vh;
   overflow: hidden;
+  margin-top: 70px;
 }
 
 .slide {
+  /* margin-top: 70px; */
   height: 90vh;
-  background-size: cover !important;
+  background-size: cover !important
 }
 
 .slide::before {

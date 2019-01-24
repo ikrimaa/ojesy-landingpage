@@ -73,9 +73,15 @@ const styles = theme => ({
 
 const themeX = createMuiTheme({
   palette: {
-    primary: { main: '#2196f3' },
+    primary: {
+      ligth: '#1769aa',
+      main: '#2196f3',
+      dark: '#4dabf5',
+    },
     secondary: {
-      main: '#f44336',
+      light: '#5b7bb2',
+      main: '#2196f3',
+      dark: '#9bc0ff',
     },
   },
 });
