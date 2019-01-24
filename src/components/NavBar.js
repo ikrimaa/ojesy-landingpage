@@ -154,21 +154,13 @@ class NavBar extends Component {
         open={isMobileMenuOpen}
         onClose={this.handleMobileMenuClose}
       >
-        <MenuItem href="test">
-          <Button href="/about" className={classes.button} >
-          <Typography >Tentang Kami</Typography>
-          </Button>
-        </MenuItem>
+      {menus.map((item) =>(
         <MenuItem>
-          <Button href="/" className={classes.button} >
-          <Typography>Team</Typography>
-          </Button>
-        </MenuItem>
-        <MenuItem onClick={this.handleProfileMenuOpen}>
-          <Button href="/" className={classes.button} >
-            <Typography>BLOG</Typography>
-          </Button>
-        </MenuItem>
+        <Button  href={item.link} className={classes.button} >
+        <Typography>{item.name}</Typography>
+        </Button>
+      </MenuItem>
+      ))}
       </Menu>
     );
 
@@ -183,8 +175,9 @@ class NavBar extends Component {
                 </Button>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
-                { menus.map((item,index)=> ( 
-                   <Button key={index} href={item.link} className={classes.button}>
+                { menus.map((item)=> ( 
+
+                   <Button  href={item.link} className={classes.button}>
                    <Typography className={classes.title} variant="h7" color="inherit" noWrap >{item.name}</Typography>
                  </Button>
                 ))} 
