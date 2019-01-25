@@ -7,6 +7,7 @@ import './styles.css';
 import Button from './Button';
 import LayoutBody from './LayoutBody';
 import Typography from './Typography';
+import { Card } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -67,7 +68,9 @@ function PostingCard(props) {
           BLOG
         </Typography>
         <div>
-         
+         <Card>
+           test
+         </Card>
         </div>
       </LayoutBody>
     </section>
