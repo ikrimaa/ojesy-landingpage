@@ -4,6 +4,7 @@ import HomePage from "../HomePage"
 import AboutUs from '../AboutUs'
 import NavBar from '../../components/NavBar'
 import NotFound from '../NotFound'
+import Footer from "../../components/Footer";
 
 function AppRouter() {
   return (
@@ -18,6 +19,7 @@ function AppRouter() {
         </Switch>
       </Router>
       </div>
+      <Footer />
       </div>
     </React.StrictMode>
   );
