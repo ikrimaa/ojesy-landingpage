@@ -7,6 +7,7 @@
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.2",
     "@material-ui/styles": "^3.0.0-alpha.8",
+    "aphrodite": "^2.2.3",
     "axios": "^0.18.0",
     "react": "^16.7.0",
     "react-animated-slider": "^1.1.4",

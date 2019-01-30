@@ -15,7 +15,7 @@ const styles = theme => ({
       boxShadow: 'none',
     },
     '&:hover': {
-      backgroundColor: '#82b1ff',
+      backgroundColor: '#4dabf5',
     },
   },
   sizeSmall: {

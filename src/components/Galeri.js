@@ -105,7 +105,7 @@ function Galeri(props) {
   return (
     <LayoutBody className={classes.root} component="section" width="large">
       <Typography variant="h4" marked="center" align="center" component="h2">
-        For all tastes and all desires
+        Best Moment With Ojesy
       </Typography>
       <div className={classes.images}>
         {images.map(image => (

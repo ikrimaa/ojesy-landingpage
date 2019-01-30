@@ -4,7 +4,8 @@ import HomePage from "../HomePage"
 import AboutUs from '../AboutUs'
 import NavBar from '../../components/NavBar'
 import NotFound from '../NotFound'
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer"
+import DetailBlog from "../DetailBlog"
 
 function AppRouter() {
   return (
@@ -15,7 +16,8 @@ function AppRouter() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />  
-          <Route  path="/about" component={AboutUs} /> 
+          {/* <Route  path="/about" component={AboutUs} />  */}
+          <Route  path="/detail" component={DetailBlog} /> 
         </Switch>
       </Router>
       </div>
