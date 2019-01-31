@@ -107,17 +107,7 @@ class DetailBlog extends Component {
   }
 
   handleLoad = () => {
-    const id = this.props.id
-    const { match: { params } } = this.props;
-    axios.get(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/post/${params.detailId}`)
-      .then(res => {
-        let postings = res.data;
-        // let postings = landingPage[0].posting;
-       // this.setState({ postings });
-        console.log(postings);
-        //console.log(id);
-       
-      })
+    
 };
 
 
@@ -125,7 +115,15 @@ class DetailBlog extends Component {
 
 
 componentDidMount(){
-  this.handleLoad()
+  const { match: { params } } = this.props;
+    axios.get(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/post/${params.detailId}`)
+      .then(res => {
+        let postings = res.data;
+       this.setState({ postings });
+        console.log(postings);
+        
+       
+      })
 }
   render() {
    
@@ -157,8 +155,8 @@ componentDidMount(){
                 <MoreVertIcon />
               </IconButton>
             }
-            title="judul"
-            subheader="tanggal"
+            title={postings.judul}
+            subheader={postings.published_at}
           />
           <CardMedia
             className={classes.media}
@@ -167,7 +165,7 @@ componentDidMount(){
            
           />
           <CardContent  >
-
+            <Typography>{postings.post}</Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
           </CardActions>
