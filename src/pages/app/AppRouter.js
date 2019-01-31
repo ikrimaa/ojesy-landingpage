@@ -16,7 +16,7 @@ function AppRouter() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />  
-          {/* <Route  path="/about" component={AboutUs} />  */}
+          <Route  path="/about" component={AboutUs} /> 
           <Route  path="/detail/:detailId" component={DetailBlog} /> 
         </Switch>
       </Router>

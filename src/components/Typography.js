@@ -32,6 +32,7 @@ const styles = theme => ({
     display: 'block',
     marginTop: theme.spacing.unit / 2,
     background: 'currentColor',
+    
   },
 });
 
@@ -61,7 +62,7 @@ function Typography(props) {
 Typography.propTypes = {
   children: PropTypes.node,
   classes: PropTypes.object.isRequired,
-  marked: PropTypes.oneOf([false, 'center', 'left']),
+  marked: PropTypes.oneOf([false, 'center', 'justify', 'left']),
   variant: PropTypes.string,
 };
 

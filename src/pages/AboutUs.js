@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Galeri from '../components/Galeri'
+import AboutCard from '../components/AboutCard'
 
 class AboutUs extends Component {
 
   render (){
       return (
         <div >
-        <Galeri />
+          <AboutCard />
       </div> 
       );
   }
