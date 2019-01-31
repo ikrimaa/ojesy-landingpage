@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
 import './styles.css';
 import Button from './Button';
 import LayoutBody from './LayoutBody';
@@ -94,11 +93,16 @@ class PostingCard extends Component {
     super(props)
     this.state = {
       postings: [],
-      id: '',
+      id:'',
     };
   }
 
-
+  handleId = (id) => {
+    this.setState({ 
+      id : id
+    })
+    this.props.onIdChange(id.target.value)
+  }
   
 
   handleLoad = () => {
@@ -108,32 +112,27 @@ class PostingCard extends Component {
         let postings = landingPage[0].posting;
         this.setState({ postings });
         console.log(postings);
+
       })
 };
 
-handleDeatail = (id) => {
- 
-}
 
-handleIdChange = (newId) =>{
-  this.setState({
-    id : newId
-  })
-}
+
+
+
 
 
 
 componentDidMount(){
   this.handleLoad()
-
-
 }
 
 
   render() {
     const url = "/detail"
     const { classes } = this.props;
-    const { postings } = this.state;
+    const { postings, id } = this.state;
+    console.log(id)
     return (
       <MuiThemeProvider theme={themeX}>
       <section className={classes.root}>
@@ -174,8 +173,11 @@ componentDidMount(){
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-          <Button size="small" color="primary" key={item.id}
-            href={`${url}/${item.id}`}
+          <Button size="small" color="primary" value={item.id}
+             href={`${url}/${item.id}`} 
+            id={item.id}
+            // onClick={(id) => {this.handleId(item.id)}}
+            onChange={(id) => {this.handleId(item.id)}}
           >
             Learn More
           </Button>
@@ -206,3 +208,4 @@ PostingCard.propTypes = {
 };
 
 export default withStyles(styles)(PostingCard);
+

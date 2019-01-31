@@ -100,32 +100,32 @@ class DetailBlog extends Component {
   }
 
 
-  
+  handleIdChange = (newId) => {
+    this.setState({ 
+      id: newId
+    })
+  }
 
   handleLoad = () => {
+    const id = this.props.id
     axios.post(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/landing-page`)
       .then(res => {
         let landingPage = res.data;
-        let postings = landingPage.posting;
+        let postings = landingPage[0].posting;
         this.setState({ postings });
         console.log(postings);
+        console.log(id);
+       
       })
 };
 
-handleDeatail = (id) => {
- 
-}
 
 
 
 
 componentDidMount(){
   this.handleLoad()
-
-
 }
-
-
   render() {
    
     const { classes } = this.props;
@@ -163,20 +163,14 @@ componentDidMount(){
             className={classes.media}
             image=""
             title="Paella dish"
+           
           />
-          <CardContent>
-            <Typography component="p">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            </Typography>
-            <Typography component="p">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            </Typography>
+          <CardContent  >
+
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
           </CardActions>
-        </Card>
-    
-        
+        </Card>    
         </div>
      
       </LayoutBody>
