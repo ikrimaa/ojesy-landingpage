@@ -108,13 +108,14 @@ class DetailBlog extends Component {
 
   handleLoad = () => {
     const id = this.props.id
-    axios.post(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/landing-page`)
+    const { match: { params } } = this.props;
+    axios.get(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/post/${params.detailId}`)
       .then(res => {
-        let landingPage = res.data;
-        let postings = landingPage[0].posting;
-        this.setState({ postings });
+        let postings = res.data;
+        // let postings = landingPage[0].posting;
+       // this.setState({ postings });
         console.log(postings);
-        console.log(id);
+        //console.log(id);
        
       })
 };

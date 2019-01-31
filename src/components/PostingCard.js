@@ -101,7 +101,6 @@ class PostingCard extends Component {
     this.setState({ 
       id : id
     })
-    this.props.onIdChange(id.target.value)
   }
   
 
@@ -174,9 +173,8 @@ componentDidMount(){
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
           <Button size="small" color="primary" value={item.id}
-             href={`${url}/${item.id}`} 
+            href={`${url}/${item.id}`} 
             id={item.id}
-            // onClick={(id) => {this.handleId(item.id)}}
             onChange={(id) => {this.handleId(item.id)}}
           >
             Learn More
