@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import LayoutBody from '../components/LayoutBody';
 import Typography from '../components/Typography';
+import { white } from 'ansi-colors';
 
 
 const styles = theme => ({
@@ -44,7 +45,9 @@ const styles = theme => ({
   listItem: {
     paddingTop: theme.spacing.unit / 2,
     paddingBottom: theme.spacing.unit / 2,
+    
   },
+  
   
 });
 
@@ -59,7 +62,7 @@ const LANGUAGES = [
   },
 ];
 
-function AppFooter(props) {
+function Footer(props) {
   const { classes } = props;
 
   return (
@@ -67,9 +70,6 @@ function AppFooter(props) {
       <LayoutBody className={classes.layoutBody} width="large">
         <Grid container spacing={40}>
           <Grid item xs={6} sm={4} md={2}>
-          <Typography variant="h6" marked="left" gutterBottom>
-              Follow Us
-            </Typography>
             <Grid
               container
               direction="column"
@@ -90,26 +90,30 @@ function AppFooter(props) {
             </Grid>
           </Grid>
           
-          <Grid item xs={6} sm={4} md={2}>
-            <Typography variant="h6" marked="left" gutterBottom>
-              Layanan
+          <Grid item xs={8} sm={6} md={6}>
+            <Typography variant="h6" marked="left" >
+              Hubungi Kami
             </Typography>
             <ul className={classes.list}>
+            
               <li className={classes.listItem}>
-               
-              </li>
-              <li className={classes.listItem}>
-               
+              <Typography variant="p" marked="left">
+               Kantor Pusat :
+               </Typography>    
+               <Typography variant="p" marked="left">
+               {"Margomulyo 150 (Barat SDN Margomulyo 1), Margomulyo, Kecamatan Balen, Mendayu Kidul, Margomulyo, Balen, Kabupaten Bojonegoro, Jawa Timur 60252"}
+               </Typography>
+               <Typography> 0877-5111-1292</Typography>
               </li>
             </ul>
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" marked="left" gutterBottom>
-              Legal
+             Legal
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                
+               privasi
               </li>
               <li className={classes.listItem}>
                 
@@ -122,11 +126,11 @@ function AppFooter(props) {
   );
 }
 
-AppFooter.propTypes = {
+Footer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
 export default compose(
   pure,
   withStyles(styles),
-)(AppFooter);
+)(Footer);

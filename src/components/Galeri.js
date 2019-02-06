@@ -89,15 +89,20 @@ function Galeri(props) {
   const images = [
     {
       url:
-        'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
-      title: 'Snorkeling',
+        'https://drive.google.com/uc?export=view&id=0ByKiSJnVQRchbXF0aXQwUEdQTzg',
+      title: 'ojesy',
       width: '40%',
     },
     {
-      url:
-        'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
-      title: 'Massage',
+      url:'https://drive.google.com/uc?export=view&id=0ByKiSJnVQRchRHdsQXo5Y1JhYVU',
+      title: 'ojesy',
       width: '20%',
+    },
+    {
+      url:
+        'https://drive.google.com/uc?export=view&id=0ByKiSJnVQRchX1ZVc1FGdW9USkE',
+      title: 'ojesy',
+      width: '40%',
     },
 
   ];

@@ -33,7 +33,6 @@ const styles = theme => ({
   title: {
     marginBottom: theme.spacing.unit * 10,
   },
- 
   image: {
     width: 150,
     height: 150,

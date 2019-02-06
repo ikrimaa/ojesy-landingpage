@@ -14,10 +14,6 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-
-
-
 import axios from 'axios';
 
 const styles = theme => ({
@@ -88,7 +84,7 @@ const themeX = createMuiTheme({
 
 
 
-class PostingCard extends Component {
+class Blog extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -115,17 +111,9 @@ class PostingCard extends Component {
       })
 };
 
-
-
-
-
-
-
-
 componentDidMount(){
   this.handleLoad()
 }
-
 
   render() {
     const url = "/detail"
@@ -201,9 +189,9 @@ componentDidMount(){
     );
   }
 }
-PostingCard.propTypes = {
+Blog.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PostingCard);
+export default withStyles(styles)(Blog);
 

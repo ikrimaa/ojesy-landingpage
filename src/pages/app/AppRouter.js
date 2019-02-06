@@ -6,6 +6,7 @@ import NavBar from '../../components/NavBar'
 import NotFound from '../NotFound'
 import Footer from "../../components/Footer"
 import DetailBlog from "../DetailBlog"
+import BlogList from '../../components/BlogList';
 
 function AppRouter() {
   return (
@@ -18,6 +19,7 @@ function AppRouter() {
           <Route exact path="/" component={HomePage} />  
           <Route  path="/about" component={AboutUs} /> 
           <Route  path="/detail/:detailId" component={DetailBlog} /> 
+          <Route path="/blog" component={BlogList}/>
         </Switch>
       </Router>
       </div>
