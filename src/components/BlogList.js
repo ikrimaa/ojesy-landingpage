@@ -24,7 +24,7 @@ const styles = theme => ({
   },
   layoutBody: {
     marginTop: theme.spacing.unit * 10,
-    marginBottom: theme.spacing.unit * 15,
+    marginBottom: theme.spacing.unit * 5,
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
@@ -37,7 +37,7 @@ const styles = theme => ({
     padding: `0px ${theme.spacing.unit * 5}px`,
   },
   title: {
-    marginBottom: theme.spacing.unit * 14,
+    marginBottom: theme.spacing.unit * 5,
   },
  
   image: {
@@ -62,8 +62,13 @@ const styles = theme => ({
     display: 'inline-block',
     borderRadius: 1,
     border: 1,
-    boxShadow: 'none',
+    maxWidth: 400,
+    margin: 20,
+    '&:hover': {
+      backgroundColor: '#e3f2fd',
+    },
   },
+
 });
 
 
@@ -160,7 +165,7 @@ componentDidMount(){
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-          <Button size="small" color="primary" value={item.id}
+          <Button size="small" color="secondary" value={item.id}
             href={`${url}/${item.id}`} 
             id={item.id}
             onChange={(id) => {this.handleId(item.id)}}
@@ -175,7 +180,7 @@ componentDidMount(){
         <Button
          
           color="secondary"
-          color="primary"
+         
           size="large"
           variant="contained"
           className={classes.button}
