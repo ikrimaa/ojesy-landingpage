@@ -9,6 +9,7 @@
     "@material-ui/styles": "^3.0.0-alpha.8",
     "aphrodite": "^2.2.3",
     "axios": "^0.18.0",
+    "iframe-react": "^1.0.1",
     "react": "^16.7.0",
     "react-animated-slider": "^1.1.4",
     "react-dom": "^16.7.0",
