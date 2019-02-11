@@ -28,7 +28,10 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: `0px ${theme.spacing.unit * 5}px`,
+    padding: `0px ${theme.spacing.unit * 10}px`,
+    '&:hover': {
+      backgroundColor: '#5393ff',
+    },
   },
   title: {
     marginBottom: theme.spacing.unit * 10,

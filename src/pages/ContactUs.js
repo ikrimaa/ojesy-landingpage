@@ -101,9 +101,9 @@ componentDidMount(){
        <LayoutBody className={classes.layoutBody} width="large">
        
         <div>
-          <Grid container spacing={40}>
+          <Grid container spacing={10}>
          
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
             <div className={classes.item}>
             <Iframe url="https://docs.google.com/forms/d/e/1FAIpQLSeuHa4N5VJn2JM-4T1oct1NVxDhPRrPGJsjFXaYx-94hAA78A/viewform?embedded=true"
                       width="450px"
@@ -115,7 +115,7 @@ componentDidMount(){
                       />
             </div>
           </Grid>  
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={6}>
           <div className={classes.item}>
           <Card className={classes.card}>
           <CardContent>
