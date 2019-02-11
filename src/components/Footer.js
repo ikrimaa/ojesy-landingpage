@@ -8,6 +8,7 @@ import LayoutBody from '../components/LayoutBody';
 import Typography from '../components/Typography';
 import { white } from 'ansi-colors';
 import logo from '../images/instagram-logo.png'
+import wa from '../images/whatsapp.png'
 
 
 const styles = theme => ({
@@ -16,8 +17,8 @@ const styles = theme => ({
     backgroundColor: "#4dabf5",
   },
   layoutBody: {
-    marginTop: theme.spacing.unit * 1,
-    marginBottom: theme.spacing.unit * 1,
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
     display: 'flex',
   },
   iconsWrapper: {
@@ -71,11 +72,17 @@ function Footer(props) {
             >
               <Grid item className={classes.icons}>
               
-                <a href="" className={classes.icon}>
+                <a href="https://www.instagram.com/ojesyindonesia/?hl=id" target="_Blank" className={classes.icon}>
                   <img width="20px" src={logo} alt="instagram" />
                 </a>
+                <a href="https://s.id/3jSkA" target="_Blank" className={classes.icon}>
+                  <img width="20px" src={wa} alt="wa" />
+                </a>
+                
               </Grid>
-              <Grid item>© 2019 magang</Grid>
+              <Grid item>© 2019 magang
+              
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

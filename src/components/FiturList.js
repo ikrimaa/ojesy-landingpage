@@ -129,7 +129,7 @@ componentDidMount(){
           variant="contained"
           className={classes.button}
           component={linkProps => (
-            <Link {...linkProps} href="/home" variant="button" />
+            <Link {...linkProps} href="https://play.google.com/store/apps/details?id=com.ojesy.ojesy" target="_Blank" variant="button" />
           )}
         >
           PESAN SEKARANG
