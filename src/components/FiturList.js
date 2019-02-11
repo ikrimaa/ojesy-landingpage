@@ -86,18 +86,14 @@ class FiturList extends Component {
         console.log(features);
       })
 };
-
 componentDidMount(){
   this.handleLoad()
 }
-
-
   render() {
-   
     const { classes } = this.props;
     const { features } = this.state;
     return (
-      <MuiThemeProvider theme={themeX}>
+    <MuiThemeProvider theme={themeX}>
      <section className={classes.root}>
        <LayoutBody className={classes.layoutBody} width="large">
         <img

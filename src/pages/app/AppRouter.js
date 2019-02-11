@@ -7,6 +7,7 @@ import NotFound from '../NotFound'
 import Footer from "../../components/Footer"
 import DetailBlog from "../DetailBlog"
 import BlogList from '../../components/BlogList';
+import ContactUs from '../ContactUs';
 
 function AppRouter() {
   return (
@@ -21,6 +22,7 @@ function AppRouter() {
           <Route  path="/detail/:detailId" component={DetailBlog} /> 
           <Route path="/blog" component={BlogList}/>
           <Route path='/NotFound' component={NotFound} />
+          <Route path='/kontak' component={ContactUs}/>
           <Redirect from='*' to='/NotFound' />
         </Switch>
       </Router>

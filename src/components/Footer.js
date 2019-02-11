@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import LayoutBody from '../components/LayoutBody';
 import Typography from '../components/Typography';
 import { white } from 'ansi-colors';
+import logo from '../images/instagram-logo.png'
 
 
 const styles = theme => ({
@@ -15,12 +16,12 @@ const styles = theme => ({
     backgroundColor: "#4dabf5",
   },
   layoutBody: {
-    marginTop: theme.spacing.unit * 8,
-    marginBottom: theme.spacing.unit * 8,
+    marginTop: theme.spacing.unit * 1,
+    marginBottom: theme.spacing.unit * 1,
     display: 'flex',
   },
   iconsWrapper: {
-    height: 120,
+    height: 90,
   },
   icons: {
     display: 'flex',
@@ -51,16 +52,7 @@ const styles = theme => ({
   
 });
 
-const LANGUAGES = [
-  {
-    code: 'en-US',
-    name: 'English',
-  },
-  {
-    code: 'fr-FR',
-    name: 'Français',
-  },
-];
+
 
 function Footer(props) {
   const { classes } = props;
@@ -68,57 +60,23 @@ function Footer(props) {
   return (
     <Typography component="footer" className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">
-        <Grid container spacing={40}>
+        <Grid container spacing={20}>
           <Grid item xs={6} sm={4} md={2}>
             <Grid
               container
               direction="column"
               justify="flex-end"
               className={classes.iconsWrapper}
-              spacing={16}
+              spacing={10}
             >
               <Grid item className={classes.icons}>
               
                 <a href="" className={classes.icon}>
-                  <img src="" alt="Facebook" />
-                </a>
-                <a href="" className={classes.icon}>
-                  <img src="" alt="Twitter" />
+                  <img width="20px" src={logo} alt="instagram" />
                 </a>
               </Grid>
               <Grid item>© 2019 magang</Grid>
             </Grid>
-          </Grid>
-          
-          <Grid item xs={8} sm={6} md={6}>
-            <Typography variant="h6" marked="left" >
-              Hubungi Kami
-            </Typography>
-            <ul className={classes.list}>
-            
-              <li className={classes.listItem}>
-              <Typography variant="p" marked="left">
-               Kantor Pusat :
-               </Typography>    
-               <Typography variant="p" marked="left">
-               {"Margomulyo 150 (Barat SDN Margomulyo 1), Margomulyo, Kecamatan Balen, Mendayu Kidul, Margomulyo, Balen, Kabupaten Bojonegoro, Jawa Timur 60252"}
-               </Typography>
-               <Typography> 0877-5111-1292</Typography>
-              </li>
-            </ul>
-          </Grid>
-          <Grid item xs={6} sm={4} md={2}>
-            <Typography variant="h6" marked="left" gutterBottom>
-             Legal
-            </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-               privasi
-              </li>
-              <li className={classes.listItem}>
-                
-              </li>
-            </ul>
           </Grid>
         </Grid>
       </LayoutBody>
