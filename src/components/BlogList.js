@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import './styles.css';
@@ -62,8 +63,8 @@ const styles = theme => ({
     display: 'inline-block',
     borderRadius: 1,
     border: 1,
-    maxWidth: 400,
-    margin: 20,
+    alignItems: 'center',
+   marginLeft : 80,
     '&:hover': {
       backgroundColor: '#e3f2fd',
     },
@@ -87,116 +88,136 @@ const themeX = createMuiTheme({
   },
 });
 
+class BlogList extends React.Component {
+  constructor(props) {
+    super(props);
 
-
-class Blog extends Component {
-  constructor(props){
-    super(props)
     this.state = {
-      postings: [],
+      items: [],
+      visible: 2,
+      error: false,
       id:'',
     };
+
+    this.loadMore = this.loadMore.bind(this);
   }
 
   handleId = (id) => {
-    this.setState({ 
-      id : id
+    this.setState({
+      id: id
     })
   }
-  
-
   handleLoad = () => {
     axios.post(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/landing-page`)
       .then(res => {
         let landingPage = res.data;
-        let postings = landingPage[0].posting;
-        this.setState({ postings });
-        console.log(postings);
+        let items = landingPage[0].posting;
+        this.setState({ items });
+        // console.log(postings);
 
+      }).catch(error => {
+        console.error(error);
+      this.setState({
+        error: true
+      });
       })
-};
+     
+    
+  };
+  
+  loadMore() {
+    this.setState((prev) => {
+      return { visible: prev.visible + 2 };
+    });
+  }
 
-componentDidMount(){
-  this.handleLoad()
-}
+  componentDidMount() {
+    this.handleLoad()
+  }
 
   render() {
     const url = "/detail"
     const { classes } = this.props;
     const { postings, id } = this.state;
-    console.log(id)
     return (
       <MuiThemeProvider theme={themeX}>
-      <section className={classes.root}>
-      <LayoutBody className={classes.layoutBody} width="large">
-        <img
-          src=""
-          className={classes.curvyLines}
-          alt="curvy lines"
-        />
-        <Typography variant="h4" marked="center" className={classes.title} component="h2">
-          BLOG
+        <section className={classes.root}>
+        <LayoutBody className={classes.layoutBody} width="large">
+            <img
+              src=""
+              className={classes.curvyLines}
+              alt="curvy lines"
+            />
+            <Typography variant="h4" marked="center" className={classes.title} component="h2">
+              BLOG
         </Typography>
-        <div>
-        {postings.map((item) => (
-          <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                {item.avatar}
-              </Avatar>
-            }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={item.judul}
-            subheader={item.published_at}
-          />
-          <CardMedia
-            className={classes.media}
-            image="/static/images/cards/paella.jpg"
-            title="Paella dish"
-          />
-          <CardContent>
-            <Typography component="p">
-             {item.post}
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.actions} disableActionSpacing>
-          <Button size="small" color="secondary" value={item.id}
-            href={`${url}/${item.id}`} 
-            id={item.id}
-            onChange={(id) => {this.handleId(item.id)}}
-          >
-            Learn More
-          </Button>
-          </CardActions>
-        </Card>
-        ))}
-        
-        </div>
-        <Button
-         
-          color="secondary"
-         
-          size="large"
-          variant="contained"
-          className={classes.button}
-          href="/blog"
-        >
-          READ MORE
+          <div >
+          {this.state.items.slice(0, this.state.visible).map((item, index) => {
+              return (
+                <div  key={item.id}>
+              
+                  <Card className={classes.card} >
+                 
+                    <CardHeader
+                      avatar={
+                        <Avatar aria-label="Recipe" className={classes.avatar}>
+                          {item.avatar}
+                        </Avatar>
+                      }
+                      action={
+                        <IconButton>
+                          <MoreVertIcon />
+                        </IconButton>
+                      }
+                      title={item.judul}
+                      subheader={item.published_at}
+                    />
+                    <CardMedia
+                      className={classes.media}
+                      image="/static/images/cards/paella.jpg"
+                      title="Paella dish"
+                    />
+                    <CardContent>
+                      <Typography component="p">
+                        {item.post}
+                      </Typography>
+                    </CardContent>
+                    <CardActions className={classes.actions} disableActionSpacing>
+                      <Button size="small" color="primary" value={item.id}
+                        href={`${url}/${item.id}`}
+                        id={item.id}
+                        onChange={(id) => { this.handleId(item.id) }}
+                      >
+                        Learn More
+                    </Button>
+                    </CardActions>
+                </Card>
+                </div>
+              );
+            })}
+          </div>
+          {this.state.visible < this.state.items.length &&
+             <Button
+             onClick={this.loadMore}
+              color="secondary"
+              color="primary"
+              size="large"
+              variant="contained"
+              className={classes.button}
+              
+            >
+              READ MORE
         </Button>
-      </LayoutBody>
-    </section>
+          }
+          </LayoutBody>
+        </section>
       </MuiThemeProvider>
+
     );
   }
 }
-Blog.propTypes = {
+BlogList.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Blog);
-
+export default withStyles(styles)(BlogList);
