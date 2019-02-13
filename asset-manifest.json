@@ -1,10 +1,10 @@
 {
   "main.css": "/ojesy-landingpage/static/css/main.0f9a5732.chunk.css",
-  "main.js": "/ojesy-landingpage/static/js/main.a950dae1.chunk.js",
-  "main.js.map": "/ojesy-landingpage/static/js/main.a950dae1.chunk.js.map",
+  "main.js": "/ojesy-landingpage/static/js/main.e3ce36a3.chunk.js",
+  "main.js.map": "/ojesy-landingpage/static/js/main.e3ce36a3.chunk.js.map",
   "static/css/1.9a25cece.chunk.css": "/ojesy-landingpage/static/css/1.9a25cece.chunk.css",
-  "static/js/1.9613b330.chunk.js": "/ojesy-landingpage/static/js/1.9613b330.chunk.js",
-  "static/js/1.9613b330.chunk.js.map": "/ojesy-landingpage/static/js/1.9613b330.chunk.js.map",
+  "static/js/1.364c93f8.chunk.js": "/ojesy-landingpage/static/js/1.364c93f8.chunk.js",
+  "static/js/1.364c93f8.chunk.js.map": "/ojesy-landingpage/static/js/1.364c93f8.chunk.js.map",
   "runtime~main.js": "/ojesy-landingpage/static/js/runtime~main.2ab4356c.js",
   "runtime~main.js.map": "/ojesy-landingpage/static/js/runtime~main.2ab4356c.js.map",
   "static/media/logo.png": "/ojesy-landingpage/static/media/logo.3f5f5315.png",
@@ -13,6 +13,6 @@
   "static/css/main.0f9a5732.chunk.css.map": "/ojesy-landingpage/static/css/main.0f9a5732.chunk.css.map",
   "static/css/1.9a25cece.chunk.css.map": "/ojesy-landingpage/static/css/1.9a25cece.chunk.css.map",
   "index.html": "/ojesy-landingpage/index.html",
-  "precache-manifest.6a54edbaedac9e2777e354bf6b62c7bd.js": "/ojesy-landingpage/precache-manifest.6a54edbaedac9e2777e354bf6b62c7bd.js",
+  "precache-manifest.94efdcbaf6e7143fbb58c2033eced2d8.js": "/ojesy-landingpage/precache-manifest.94efdcbaf6e7143fbb58c2033eced2d8.js",
   "service-worker.js": "/ojesy-landingpage/service-worker.js"
 }
