@@ -10,6 +10,15 @@ import BlogList from '../../components/BlogList';
 import ContactUs from '../ContactUs';
 
 function AppRouter() {
+  const publicPath = '/ojesy-landingpage/';
+  const routeCodes = {
+    HOME : publicPath,
+    ABOUT : `${ publicPath }about`,
+    BLOG : `${ publicPath }blog`,
+    CONTACT : `${ publicPath }contact`,
+    DETAIL : `${ publicPath }detail/:detailId`,
+    NOT : `${ publicPath }NotFound`,
+  }
   return (
     <React.StrictMode>
       <div>
@@ -17,13 +26,13 @@ function AppRouter() {
       <div>
       <Router>
         <Switch>
-          <Route exact path="/" component={HomePage} />  
-          <Route  path="/about" component={AboutUs} /> 
-          <Route  path="/detail/:detailId" component={DetailBlog} /> 
-          <Route path="/blog" component={BlogList}/>
-          <Route path='/NotFound' component={NotFound} />
-          <Route path='/kontak' component={ContactUs}/>
-          <Redirect from='*' to='/NotFound' />
+          <Route exact path={routeCodes.HOME} component={HomePage} />  
+          <Route  path={routeCodes.ABOUT} component={AboutUs} /> 
+          <Route  path={routeCodes.DETAIL} component={DetailBlog} /> 
+          <Route path={routeCodes.BLOG} component={BlogList}/>
+          <Route path={routeCodes.NOT} component={NotFound} />
+          <Route path={routeCodes.CONTACT} component={ContactUs}/>
+          <Redirect from='*' to={routeCodes.NOT} />
         </Switch>
       </Router>
       </div>
