@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ojesy-landingpage/precache-manifest.94efdcbaf6e7143fbb58c2033eced2d8.js"
+  "/ojesy-landingpage/precache-manifest.a4183d692d81ba9c0a39ce441f37ae2f.js"
 );
 
 workbox.clientsClaim();
