@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# Fallback all other routes to index.html
+RewriteRule ^ /ojesy-landingpage/about/index.html [L]
+RewriteRule ^ /ojesy-landingpage/contact/index.html [L]
+RewriteRule ^ /ojesy-landingpage/blog/index.html [L]
