@@ -67,6 +67,34 @@ saat ini perubahan telah tersimpan di salinan kerja lokal, untuk megirimkan ke r
 
 ## Material Design Dengan Material-UI.com 
 
+Merupakan bahasa desain yang dikembangkan Google dan diumumkan pada konferensi Google I/O pada 25 Juni 2014. Memperluas pada motif "kartu" yang pertama kali terlihat pada Google Now, adalah desain dengan peningkatan penggunaan layout berbasis grid, animasi dan transisi responsif, padding, dan efek kedalaman seperti pencahayaan dan bayangan. ( wikipedia )
+
+Material-UI.com 
+merupakan framework react UI yang popular, dan tersedia di [npm package](https://www.npmjs.com/package/@material-ui/core) 
+untuk melakukan instalasi dan menyimpan di *dependencies* package.json jalan kan perintah :
+
+    // dengan npm
+    npm install @material-ui/core
+    
+    // dengan yarn
+    yarn add @material-ui/core
+    
+## Membuat Component
+1. Header
+2. Footer
+1. Halaman Home 
+    2. Cover
+    3. Fitur List
+    4. Galeri
+    5. Blog
+2. Halaman Tentang Kami
+3. Halaman Blog
+4.
+
+
+
+
+
 
 
 
