@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "b51d7b38597731d4ff21",
+    "revision": "d2986c911a9053ea5542",
     "url": "/ojesy-landingpage/static/css/main.0f9a5732.chunk.css"
   },
   {
-    "revision": "b51d7b38597731d4ff21",
-    "url": "/ojesy-landingpage/static/js/main.b51d7b38.chunk.js"
+    "revision": "d2986c911a9053ea5542",
+    "url": "/ojesy-landingpage/static/js/main.d2986c91.chunk.js"
   },
   {
-    "revision": "9613b330420564d1bd8c",
+    "revision": "364c93f85ffdd7e400e7",
     "url": "/ojesy-landingpage/static/css/1.9a25cece.chunk.css"
   },
   {
-    "revision": "9613b330420564d1bd8c",
-    "url": "/ojesy-landingpage/static/js/1.9613b330.chunk.js"
+    "revision": "364c93f85ffdd7e400e7",
+    "url": "/ojesy-landingpage/static/js/1.364c93f8.chunk.js"
   },
   {
     "revision": "2ab4356c1984708263b3",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/ojesy-landingpage/static/media/logo.ee7cd8ed.svg"
   },
   {
-    "revision": "7da40124e3cc08a597a1b9072f63b589",
+    "revision": "4b015d0e67bc95c464ceb911ea2cddc3",
     "url": "/ojesy-landingpage/index.html"
   }
 ];
