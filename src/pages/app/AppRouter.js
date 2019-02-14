@@ -70,7 +70,7 @@ function AppRouter() {
       <div>
       <NavBar/>
       <div>
-      <Router basename="/ojesy-landingpage">
+      <Router >
         <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />  
           <Route  path={`${process.env.PUBLIC_URL}/about`} component={AboutUs} /> 
