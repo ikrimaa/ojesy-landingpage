@@ -33,8 +33,6 @@ untuk membuat project baru dengan react, menggunakan langkah sebagai berikut :
 
 harus diketahui `create-react-app` tidak menangani logika maupun database , dimana hanya membuat frontend 
 
-berikut tampilan ojesy-fe
-
 ## Gitlab Repo
 Ketika kita membuat sebuah folder project web dengan isi file javascript, html, css. kemudian ketika sudah siap untuk dirilis file-file tersebut diupload ke server. di era teknologi opensource,  banyak developer dari berbagai negara menawarkan layanan hosting private dan public, seperti Github, Gitlab dan lain - lain. Ada yang berbayar dan gratis. sebagai developer pemula sebaiknya menggunakan fitur yang gratis. Untuk menyimpan file-file landing page ini menggunakan Gitlab.
 
@@ -166,6 +164,7 @@ untuk menggunakan layanan pages kita perlu melakukan :
 1. sign up github
 2. membuat repositori di github 
 3. aktifkan github pages di menu setting
+    - gambar    
 4. setelah itu tambahkan repositori github yang telah dibuat sebagai repositori jarak jauh dan `push` code kedalamnya dengan perintah berikut:
 
     ```
@@ -200,9 +199,18 @@ untuk menggunakan layanan pages kita perlu melakukan :
 
     "predeploy":"yarn run build",
     "deploy":"gh-pages -d build", 
-    
-    ```
 
+    ```
+    - gambar 
+
+7. langkah terakhir untuk deployment :
+pada command line jalankan perintah betikut
+
+``` yarn deploy
+```
+
+-gambar sukses deploy
+-gambar gh-pages
 
 
 
