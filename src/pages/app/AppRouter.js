@@ -44,8 +44,8 @@
 // export default AppRouter;
 
 import * as React from "react";
-//import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
- import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+ //import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "../HomePage"
 import AboutUs from '../AboutUs'
 import NavBar from '../../components/NavBar'
@@ -71,7 +71,7 @@ function AppRouter() {
       <NavBar/>
       <div>
       <Router >
-        <Switch>
+        {/* <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />  
           <Route  path={`${process.env.PUBLIC_URL}/about`} component={AboutUs} /> 
           <Route  path={`${process.env.PUBLIC_URL}/detail/:detailId`} component={DetailBlog} /> 
@@ -79,6 +79,15 @@ function AppRouter() {
           <Route path={`${process.env.PUBLIC_URL}/NotFound`} component={NotFound} />
           <Route path={`${process.env.PUBLIC_URL}/contact`} component={ContactUs}/>
           <Redirect from='*' to={`${process.env.PUBLIC_URL}/NotFound`} />
+        </Switch> */}
+        <Switch>
+          <Route exact path="/" component={HomePage} />  
+          <Route  path="/about" component={AboutUs} /> 
+          <Route  path="/detail/:detailId" component={DetailBlog} /> 
+          <Route path="/blog" component={BlogList}/>
+          <Route path="/NotFound" component={NotFound} />
+          <Route path="/contact" component={ContactUs}/>
+          <Redirect from='*' to="/NotFound" />
         </Switch>
       </Router>
       </div>

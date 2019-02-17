@@ -91,6 +91,120 @@ untuk melakukan instalasi dan menyimpan di *dependencies* package.json jalan kan
 3. Halaman Blog
 4.
 
+## Request HTTP
+Pada  bagian ini kita akan membahas bagaimana kita mengonsumsi data yang telah disediakan backend, HTTP seperangkat metode permintaan untuk mengajukan tindakan yang  diinginkan, yang akan dilakukan. 
+
+Pada proyek ini untuk melakukan permintaan HTTP, yang berfungsi di platform Browser dan Node.js akan 
+mengunakan Axios library javascript yang popular.
+
+kita dapat memulai dengan menambahkan axios :
+```
+Dengan npm
+npm install axios --save
+
+Dengan Yarn
+yarn add axios
+```
+contoh penggunaan axios di proyek landing page ini :
+
+```
+import React, { Component } from 'react';
+import Slider from 'react-animated-slider';
+import 'react-animated-slider/build/horizontal.css';
+import './slider-animations.css';
+import './styles.css';
+import axios from 'axios';
+class SlideCover extends Component {
+  state = {
+    landingPage: [],
+    covers: [],
+  }
+  // handleload = mengambil data dari api data covers 
+  handleLoad = () => {
+    axios.post(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/landing-page`)
+      .then(res => {
+        let landingPage = res.data;
+        let covers = landingPage[0].cover;
+        this.setState({ covers });
+      })
+  }
+  componentDidMount() {
+    this.handleLoad()
+  }
+  render() {
+    const { covers } = this.state
+    return (
+      <div>
+        <Slider autoplay={3000} className="slider-wrapper">
+          {covers.map((item, index) => (
+            <div
+              key={index}
+              className="slider-content"
+              style={{ background: `url('${item.link_gambar}') no-repeat center center` }}
+            >
+              <div className="inner">
+                <h1>{item.name}</h1>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    );
+  }
+}
+export default SlideCover;
+```
+## Deploy Ke Server
+selanjutnya akan menjelaskan mengenai bagaimana project yang telah dibuat ini dapat diakses banyak orang melalui browser masing-masing. sebenarnya ada banyak cara seperti Surge.sh, Heroku, pages. 
+
+Karena dari awal development proyek menggunakan CRA ( create react app ). Dengan menggunakan CRA ini kita tinggal fokus dalam membangun feature dari app yang ingin kita buat. Kita bisa menggunakan yarn startsaat melakukan development di local dan menggunakan yarn builduntuk melakukan deployment. 
+
+Jika sebelumnya kita telah berhasil membuat React app menggunakan CRA, kali ini kita akan mencoba melakukan deployment menggunakan pages. 
+
+untuk menggunakan layanan pages kita perlu melakukan :
+1. sign up github
+2. membuat repositori di github 
+3. aktifkan github pages di menu setting
+4. setelah itu tambahkan repositori github yang telah dibuat sebagai repositori jarak jauh dan `push` code kedalamnya dengan perintah berikut:
+
+    ```
+    #menambah remote repositori
+    git remote add origin https://github.com/namaakun/namarepositori.git
+
+    # menambahkan perubahan
+    git add .
+
+    # commit semua perubahan
+    git commit -m 'deploy gh-pages' 
+    #
+    $ git push origin master
+    ```
+5. Langkah selanjunya menambahkan `gh-pages` 
+    ```
+    # dengan npm
+    npm install --save gh-pages
+
+    # dengan yarn
+    yarn add gh-pages
+    ```
+6. modifikasi `package.json` dengan beberapa statement berikut:
+
+    ```
+    Homepage menentukan jalur host tempat Anda ingin meng-host aplikasi.
+    Template untuk URL adalah: 
+    https: // [nama-pengguna-Anda] .github.io / [nama-repo Anda] /
+
+    "homepage": "https://ikrimaa.github.io/ojesy-landingpage",
+    
+
+    "predeploy":"yarn run build",
+    "deploy":"gh-pages -d build", 
+    
+    ```
+
+
+
 
 
 
