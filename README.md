@@ -23,6 +23,7 @@ Sebelum Anda membuat landing page dengan react ada beberapa hal yang harus diper
 6. **Koneksi Internet**
 
 ## Apa Itu React Js ?
+merupakan library opensource yang dikembangkan oleh facebook untuk membangun user interface. React JS hanya mengurusi semua hal yang berkaitan dengan tampilan dan logika di sekitarnya. 
 
 ## Membuat Project Baru 
 untuk membuat project baru dengan react, menggunakan langkah sebagai berikut :
@@ -78,17 +79,111 @@ untuk melakukan instalasi dan menyimpan di *dependencies* package.json jalan kan
     yarn add @material-ui/core
     
 ## Membuat Component
+berikut beberapa komponen untuk pembuatan landingpage ini, 
 1. Header
 2. Footer
 1. Halaman Home 
-    2. Cover
-    3. Fitur List
-    4. Galeri
-    5. Blog
+    1. Cover
+    2. Fitur List
+    3. Galeri
+    4. Blog
 2. Halaman Tentang Kami
 3. Halaman Blog
-4.
+4. Halaman Hubungi Kami
 
+dimana akan saya ambil satu contoh membangun komponen bloglist dengan beberapa function
+1. handleload merupakan komponen untuk melakukan request http atau menampilkan data artikel
+    ```
+    handleLoad = () => {
+        axios.post(`https://private-16c0d2-ikrimaa.apiary-mock.com/v1/landing-page`)
+          .then(res => {
+            let landingPage = res.data;
+            let items = landingPage[0].posting;
+            this.setState({ items });
+            // console.log(postings);
+
+          }).catch(error => {
+            console.error(error);
+          this.setState({
+            error: true
+          });
+          })
+    ```
+2. loadmore
+merupakan komponen yang akan menghandle brapa banya data yang akan ditampilkan
+    
+    ```
+      loadMore() {
+      this.setState((prev) => {
+        return { visible: prev.visible + 2 };
+      });
+      }
+    ```
+3. Mapping data yang telah diambil ke card / tampilan blog
+
+     ```
+        <div >
+          {this.state.items.slice(0, this.state.visible).map((item, index) => {
+              return (
+                <div  key={item.id}>
+              
+                  <Card className={classes.card} >
+                 
+                    <CardHeader
+                      avatar={
+                        <Avatar aria-label="Recipe" className={classes.avatar}>
+                          {item.avatar}
+                        </Avatar>
+                      }
+                      action={
+                        <IconButton>
+                          <MoreVertIcon />
+                        </IconButton>
+                      }
+                      title={item.judul}
+                      subheader={item.published_at}
+                    />
+                    <CardMedia
+                      className={classes.media}
+                      image="/static/images/cards/paella.jpg"
+                      title="Paella dish"
+                    />
+                    <CardContent>
+                      <Typography component="p">
+                        {item.post}
+                      </Typography>
+                    </CardContent>
+                    <CardActions className={classes.actions} disableActionSpacing>
+                      <Button size="small" color="primary" value={item.id}
+                      href={`${url}/${item.id}`}
+                        id={item.id}
+                        onChange={(id) => { this.handleId(item.id) }}
+                      >
+                        Learn More
+                    </Button>
+                    </CardActions>
+                </Card>
+                </div>
+              );
+            })}
+          </div>
+      ```
+4. membuat tombol Readmore, dimana tombol ini berfungsi memanggi handle loadmore yang telah dibuat
+    ```
+    {this.state.visible < this.state.items.length &&
+             <Button
+             onClick={this.loadMore}
+              color="secondary"
+              color="primary"
+              size="large"
+              variant="contained"
+              className={classes.button}
+              
+            >
+              READ MORE
+        </Button>
+          }
+    ```
 ## Request HTTP
 Pada  bagian ini kita akan membahas bagaimana kita mengonsumsi data yang telah disediakan backend, HTTP seperangkat metode permintaan untuk mengajukan tindakan yang  diinginkan, yang akan dilakukan. 
 
